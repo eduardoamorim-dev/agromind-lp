@@ -20,6 +20,7 @@ export default function AISimulator() {
   const [input, setInput] = useState('');
   const [conversation, setConversation] = useState([]);
   const chatEndRef = useRef(null);
+  const chatContainerRef = useRef(null); // Referência para o container de chat
 
   // Demo conversation
   const demoConversation = [
@@ -93,9 +94,21 @@ export default function AISimulator() {
     return () => clearInterval(timer);
   };
 
+  // Função para rolar para o final da conversa apenas dentro do container
+  const scrollToBottom = () => {
+    if (chatEndRef.current && chatContainerRef.current) {
+      // Usando scrollIntoView com containerId para controlar o contexto do scroll
+      const container = chatContainerRef.current;
+      const element = chatEndRef.current;
+
+      // Rolando o container em vez da página
+      container.scrollTop = element.offsetTop;
+    }
+  };
+
   // Rolar para o final da conversa quando novas mensagens são adicionadas
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    scrollToBottom();
   }, [conversation, isTyping]);
 
   const handleSubmit = (e) => {
@@ -159,7 +172,7 @@ export default function AISimulator() {
             <span className="text-sm font-medium">AI</span>
           </div>
           <div>
-            <h3 className="font-medium">AgroIA Assistant</h3>
+            <h3 className="font-medium">AgroMind Assistant</h3>
             <p className="text-xs text-green-100">
               Alimentado com dados da Embrapa
             </p>
@@ -179,8 +192,11 @@ export default function AISimulator() {
         </button>
       </div>
 
-      {/* Área da conversa */}
-      <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+      {/* Área da conversa - agora com ref para controlar o scroll */}
+      <div
+        ref={chatContainerRef}
+        className="h-96 overflow-y-auto p-4 bg-gray-50 scroll-smooth"
+      >
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -252,6 +268,7 @@ export default function AISimulator() {
             )}
           </AnimatePresence>
 
+          {/* Elemento de referência para o fim da conversa */}
           <div ref={chatEndRef} />
         </motion.div>
       </div>

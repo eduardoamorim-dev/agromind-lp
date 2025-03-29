@@ -15,9 +15,10 @@ export default function TestimonialsSection() {
       id: 1,
       name: 'João Silva',
       role: 'Produtor de Soja - MT',
-      image: '/images/testimonial-1.jpg',
+      image:
+        'https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80',
       content:
-        'A AgroIA transformou nosso manejo de pragas. Em uma safra onde a ferrugem asiática estava atacando toda a região, conseguimos identificar o problema no início e tomar medidas preventivas que pouparam mais de 30% da nossa produção.',
+        'A AgroMind transformou nosso manejo de pragas. Em uma safra onde a ferrugem asiática estava atacando toda a região, conseguimos identificar o problema no início e tomar medidas preventivas que pouparam mais de 30% da nossa produção.',
       rating: 5,
       tagline: 'Aumentou minha produtividade em 30%',
       farm: 'Fazenda Santa Maria',
@@ -26,7 +27,8 @@ export default function TestimonialsSection() {
       id: 2,
       name: 'Maria Oliveira',
       role: 'Produtora de Café - MG',
-      image: '/images/testimonial-2.jpg',
+      image:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80',
       content:
         'Sou da terceira geração de cafeicultores e nunca tivemos acesso a tecnologia tão avançada para o pequeno produtor. A plataforma é intuitiva e as recomendações são precisas. Consegui controlar uma infestação de broca do café que teria comprometido toda minha safra.',
       rating: 5,
@@ -37,9 +39,10 @@ export default function TestimonialsSection() {
       id: 3,
       name: 'Carlos Mendes',
       role: 'Engenheiro Agrônomo - PR',
-      image: '/images/testimonial-3.jpg',
+      image:
+        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80',
       content:
-        'Como consultor agrícola, recomendo a AgroIA para todos os meus clientes. A ferramenta potencializa meu trabalho, oferecendo diagnósticos rápidos e fundamentados cientificamente. Os produtores que adotaram a plataforma reduziram significativamente o uso de defensivos.',
+        'Como consultor agrícola, recomendo a AgroMind para todos os meus clientes. A ferramenta potencializa meu trabalho, oferecendo diagnósticos rápidos e fundamentados cientificamente. Os produtores que adotaram a plataforma reduziram significativamente o uso de defensivos.',
       rating: 5,
       tagline: 'Ferramenta essencial para consultoria técnica',
       farm: 'Consultoria Agro Futuro',

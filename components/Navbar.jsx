@@ -62,7 +62,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <div className="relative h-10 w-10">
               <Image
-                src="/images/logo.svg"
+                src="/images/logo.png"
                 alt="Agro Mind Logo"
                 fill
                 className="object-contain"
@@ -74,7 +74,7 @@ export default function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Agro<span className="text-green-500">IA</span>
+              Agro<span className="text-green-500">Mind</span>
             </motion.span>
           </Link>
 
@@ -126,32 +126,6 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-
-            <div className="ml-6 flex items-center space-x-3">
-              <Link
-                href="/login"
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  scrolled
-                    ? 'text-gray-700 hover:text-green-600 hover:bg-gray-100'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                Login
-              </Link>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  href="/signup"
-                  className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full text-sm font-medium shadow-md transition-all duration-200 flex items-center"
-                >
-                  Teste Grátis
-                  <ChevronDown className="ml-1 h-4 w-4 rotate-90" />
-                </Link>
-              </motion.div>
-            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -227,23 +201,6 @@ export default function Navbar() {
                       )}
                     </div>
                   ))}
-
-                  <div className="pt-6 flex flex-col space-y-4 w-full border-t border-white/20">
-                    <Link
-                      href="/login"
-                      onClick={() => setIsOpen(false)}
-                      className="py-3 px-6 text-center text-white font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors"
-                    >
-                      Login
-                    </Link>
-                    <Link
-                      href="/signup"
-                      onClick={() => setIsOpen(false)}
-                      className="py-3 px-6 text-center text-green-700 font-medium bg-white rounded-full hover:bg-gray-100 transition-colors"
-                    >
-                      Teste Grátis
-                    </Link>
-                  </div>
                 </div>
               </div>
             </motion.div>

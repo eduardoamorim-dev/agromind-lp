@@ -35,42 +35,36 @@ export default function FeaturesSection() {
       title: 'Identificação Precisa',
       description:
         'Identifique pragas e doenças com precisão de até 97% usando apenas uma foto da planta afetada.',
-      image: '/images/feature-identification.png',
     },
     {
       icon: <Database size={24} />,
       title: 'Base Científica da Embrapa',
       description:
         'Acesse conhecimento científico da maior instituição de pesquisa agrícola do Brasil.',
-      image: '/images/feature-database.png',
     },
     {
       icon: <BarChart size={24} />,
       title: 'Analytics Detalhados',
       description:
         'Monitore estatísticas de pragas e preveja surtos com base em dados históricos e ambientais.',
-      image: '/images/feature-analytics.png',
     },
     {
       icon: <Zap size={24} />,
       title: 'Resposta Rápida',
       description:
         'Receba diagnósticos e recomendações de tratamento em segundos, não em dias.',
-      image: '/images/feature-response.png',
     },
     {
       icon: <Globe size={24} />,
       title: 'Mapeamento Regional',
       description:
         'Visualize padrões regionais de pragas e prepare-se para possíveis ameaças à sua lavoura.',
-      image: '/images/feature-mapping.png',
     },
     {
       icon: <Shield size={24} />,
       title: 'Gestão Preventiva',
       description:
         'Receba alertas antecipados sobre condições favoráveis a pragas específicas em sua região.',
-      image: '/images/feature-prevention.png',
     },
   ];
 
@@ -125,7 +119,6 @@ export default function FeaturesSection() {
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
-              image={feature.image}
               glowColor={
                 index % 2 === 0
                   ? 'rgba(34, 197, 94, 0.4)'
@@ -188,7 +181,7 @@ export default function FeaturesSection() {
               >
                 <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/ai-recommendation.jpg"
+                    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"
                     alt="Recomendações personalizadas"
                     fill
                     className="object-cover"

@@ -17,14 +17,10 @@ export default function Marquee({ reversed = false, speed = 15 }) {
 
   // Logos de empresas parceiras - adicione seus próprios logos aqui
   const partners = [
-    { name: 'Embrapa', logo: '/images/partners/embrapa.svg' },
-    { name: 'Cooperativa Agrícola', logo: '/images/partners/coop1.svg' },
-    { name: 'Agrosul', logo: '/images/partners/agrosul.svg' },
-    { name: 'Agrotech Brasil', logo: '/images/partners/agrotech.svg' },
-    { name: 'BioTech', logo: '/images/partners/biotech.svg' },
-    { name: 'FazendaTech', logo: '/images/partners/fazendatech.svg' },
-    { name: 'AgriInvest', logo: '/images/partners/agriinvest.svg' },
-    { name: 'RuralConnect', logo: '/images/partners/ruralconnect.svg' },
+    { name: 'Biofy', logo: '/images/partners/embrapa.svg' },
+    { name: 'NVIDIA', logo: '/images/partners/coop1.svg' },
+    { name: 'Oracle', logo: '/images/partners/agrosul.svg' },
+    { name: 'Embrapa', logo: '/images/partners/agrosul.svg' },
   ];
 
   // Duplicamos os logos para criar efeito contínuo

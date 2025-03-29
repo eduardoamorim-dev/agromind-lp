@@ -11,7 +11,6 @@ import FeaturesSection from '@/components/FeaturesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import AISimulator from '@/components/AISimulator';
 import Marquee from '@/components/Marquee';
-import PricingSection from '@/components/PricingSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { MessageSquare } from 'lucide-react';
@@ -62,7 +61,7 @@ export default function Home() {
                   }}
                 ></motion.div>
               </div>
-              <p className="mt-4 text-white text-xl font-medium">AgroIA</p>
+              <p className="mt-4 text-white text-xl font-medium">AgroMind</p>
             </div>
           </motion.div>
         ) : (
@@ -190,9 +189,6 @@ export default function Home() {
             {/* Partners Marquee */}
             <Marquee />
 
-            {/* Pricing Section */}
-            <PricingSection />
-
             {/* CTA Section */}
             <CTASection />
 
@@ -201,7 +197,7 @@ export default function Home() {
 
             {/* WhatsApp Float Button */}
             <motion.a
-              href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20AgroIA."
+              href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20AgroMind."
               target="_blank"
               rel="noopener noreferrer"
               className="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-3 rounded-full shadow-xl"

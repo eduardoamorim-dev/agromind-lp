@@ -92,13 +92,13 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-5">
               <Image
-                src="/images/logo-white.svg"
-                alt="AgroIA Logo"
+                src="/images/logo.png"
+                alt="AgroMind Logo"
                 width={40}
                 height={40}
               />
               <span className="ml-2 text-xl font-bold">
-                Agro<span className="text-green-400">IA</span>
+                Agro<span className="text-green-400">Mind</span>
               </span>
             </Link>
 
@@ -123,7 +123,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-green-400 shrink-0" />
-                <span>contato@agroia.com.br</span>
+                <span>contato@AgroMind.com.br</span>
               </div>
             </div>
 
@@ -243,7 +243,7 @@ export default function Footer() {
         {/* Copyright & Language */}
         <div className="mt-16 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} AgroIA. Todos os direitos
+            &copy; {new Date().getFullYear()} AgroMind. Todos os direitos
             reservados.
           </p>
 
