@@ -1,37 +1,146 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AgroIA - Landing Page de Startup AgroTech
 
-## Getting Started
+Esta é uma landing page moderna e altamente interativa para uma startup de tecnologia agrícola que utiliza inteligência artificial para ajudar produtores rurais a combater pragas em suas plantações.
 
-First, run the development server:
+## 🌱 Características
+
+- Design moderno e inovador com animações fluidas
+- Interface responsiva e otimizada para todos os dispositivos
+- Componentes interativos que melhoram a experiência do usuário
+- Simulador de IA para demonstração do produto
+- Efeitos visuais avançados (partículas, parallax, etc.)
+- Otimizado para SEO e conversão
+- Performance de carregamento rápido
+
+## 🚀 Tecnologias
+
+- **Next.js 14** - Framework React com foco em performance
+- **Tailwind CSS** - Framework CSS utilitário
+- **Framer Motion** - Biblioteca de animações
+- **Lucide React** - Ícones modernos e customizáveis
+
+## 📁 Estrutura do Projeto
+
+```
+agroia-landing/
+├── app/                  # Arquivos do Next.js App Router
+│   ├── globals.css       # Estilos globais
+│   ├── layout.js         # Layout principal (com meta tags)
+│   └── page.js           # Página principal
+├── components/           # Componentes reutilizáveis
+│   ├── AISimulator.jsx   # Simulador de IA
+│   ├── CTASection.jsx    # Seção de call-to-action
+│   ├── FeaturesSection.jsx # Seção de recursos
+│   ├── Footer.jsx        # Rodapé
+│   ├── HeroSection.jsx   # Hero section
+│   ├── Marquee.jsx       # Marquee para logos de parceiros
+│   ├── ModernCard.jsx    # Card de recursos
+│   ├── Navbar.jsx        # Navegação
+│   ├── ParticleBackground.jsx # Fundo de partículas interativo
+│   ├── PricingSection.jsx # Seção de preços
+│   └── TestimonialsSection.jsx # Seção de depoimentos
+├── public/               # Arquivos estáticos
+│   └── images/           # Imagens
+├── next.config.js        # Configuração do Next.js
+├── package.json          # Dependências do projeto
+├── postcss.config.js     # Configuração do PostCSS
+└── tailwind.config.js    # Configuração do Tailwind CSS
+```
+
+## 🛠️ Configuração do Ambiente de Desenvolvimento
+
+### Pré-requisitos
+
+- Node.js 18.x ou superior
+- npm ou yarn
+
+### Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/agroia-landing.git
+cd agroia-landing
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+3. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🖼️ Imagens
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+É necessário adicionar as seguintes imagens ao projeto:
 
-## Learn More
+- `/public/images/logo.svg` - Logo da AgroIA
+- `/public/images/logo-white.svg` - Logo branco para fundo escuro
+- `/public/images/hero-bg.jpg` - Imagem de fundo da seção hero
+- `/public/images/field-background.jpg` - Imagem de campo agrícola
+- `/public/images/testimonial-1.jpg`, `/public/images/testimonial-2.jpg`, `/public/images/testimonial-3.jpg` - Fotos de depoimentos
+- `/public/images/app-screen-1.jpg`, `/public/images/app-screen-2.jpg`, `/public/images/app-screen-3.jpg` - Screenshots do aplicativo
+- `/public/images/ai-recommendation.jpg` - Imagem da recomendação de IA
+- `/public/images/soybean-rust.jpg` - Imagem de ferrugem da soja
+- `/public/images/feature-*.png` - Imagens para as features
+- `/public/images/partners/*.svg` - Logos de parceiros
+- `/public/images/grid-pattern.svg` - Padrão de grade para fundos
+- `/public/images/og-image.jpg` - Imagem para compartilhamento em redes sociais
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Responsividade
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A landing page foi projetada para funcionar perfeitamente em:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Desktops e laptops (1200px+)
+- Tablets (768px - 1199px)
+- Smartphones (até 767px)
 
-## Deploy on Vercel
+## 🔧 Customização
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Para personalizar este projeto:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# agro-mind
+1. **Cores**: Altere as cores no arquivo `tailwind.config.js`
+2. **Conteúdo**: Modifique o texto e imagens nos componentes
+3. **Fontes**: Altere a fonte no arquivo `app/layout.js`
+4. **Imagens**: Substitua as imagens na pasta `public/images/`
+
+## 📊 Analytics e SEO
+
+Para obter o máximo da landing page:
+
+1. Adicione seu ID do Google Analytics no arquivo `app/layout.js`
+2. Personalize as meta tags em `app/layout.js`
+3. Configure o arquivo `app/sitemap.js` com suas URLs
+
+## 🚀 Deploy
+
+Para fazer deploy da landing page:
+
+1. **Vercel** (recomendado para Next.js):
+   ```bash
+   npm install -g vercel
+   vercel
+   ```
+
+2. **Netlify**:
+   - Construa o projeto: `npm run build`
+   - Deploy: `netlify deploy --prod`
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📞 Suporte
+
+Para suporte ou dúvidas, entre em contato através de [contato@agroia.com.br](mailto:contato@agroia.com.br).
