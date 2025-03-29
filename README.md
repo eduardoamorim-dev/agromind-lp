@@ -1,4 +1,4 @@
-# AgroIA - Landing Page de Startup AgroTech
+# AgroMind - Landing Page de Startup AgroTech
 
 Esta é uma landing page moderna e altamente interativa para uma startup de tecnologia agrícola que utiliza inteligência artificial para ajudar produtores rurais a combater pragas em suas plantações.
 
