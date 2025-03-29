@@ -1,101 +1,263 @@
-import Image from "next/image";
+// app/page.js
+'use client';
+
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Components
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import FeaturesSection from '@/components/FeaturesSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import AISimulator from '@/components/AISimulator';
+import Marquee from '@/components/Marquee';
+import PricingSection from '@/components/PricingSection';
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
+import { MessageSquare } from 'lucide-react';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [loading, setLoading] = useState(true);
+  const [cookieConsent, setCookieConsent] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  useEffect(() => {
+    // Check if user already accepted cookies
+    const hasConsent = localStorage.getItem('cookie-consent');
+    if (hasConsent) {
+      setCookieConsent(true);
+    }
+
+    // Simulate page loading
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookie-consent', 'true');
+    setCookieConsent(true);
+  };
+
+  return (
+    <main className="relative">
+      <AnimatePresence>
+        {loading ? (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-green-900"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <div className="text-center">
+              <div className="inline-block relative w-20 h-20">
+                <div className="absolute top-0 left-0 w-full h-full border-4 border-white/20 rounded-full"></div>
+                <motion.div
+                  className="absolute top-0 left-0 w-full h-full border-t-4 border-white rounded-full"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                ></motion.div>
+              </div>
+              <p className="mt-4 text-white text-xl font-medium">AgroIA</p>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <Navbar />
+
+            {/* Hero Section */}
+            <HeroSection />
+
+            {/* Features Section */}
+            <FeaturesSection />
+
+            {/* AI Demo Section */}
+            <section className="py-20 bg-gray-50">
+              <div className="container mx-auto px-4">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <div className="inline-flex items-center px-4 py-1 bg-green-50 rounded-full mb-4 text-green-600 font-medium text-sm">
+                      <span>Tecnologia em Ação</span>
+                    </div>
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                      Veja como a nossa IA{' '}
+                      <span className="text-green-600">
+                        funciona na prática
+                      </span>
+                    </h2>
+                    <p className="text-xl text-gray-600 mb-6">
+                      Experimente interagir com nossa inteligência artificial
+                      treinada com dados da Embrapa. Faça perguntas sobre pragas
+                      comuns e receba diagnósticos precisos e recomendações
+                      práticas.
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      <li className="flex items-start">
+                        <div className="bg-green-100 rounded-full p-1 mt-1 mr-3">
+                          <svg
+                            className="w-4 h-4 text-green-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                        </div>
+                        <span className="text-gray-700">
+                          Upload de fotos para identificação visual
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="bg-green-100 rounded-full p-1 mt-1 mr-3">
+                          <svg
+                            className="w-4 h-4 text-green-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                        </div>
+                        <span className="text-gray-700">
+                          Identificação de pragas por descrição de sintomas
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="bg-green-100 rounded-full p-1 mt-1 mr-3">
+                          <svg
+                            className="w-4 h-4 text-green-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                        </div>
+                        <span className="text-gray-700">
+                          Recomendações científicas baseadas na Embrapa
+                        </span>
+                      </li>
+                    </ul>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <AISimulator />
+                  </motion.div>
+                </div>
+              </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <TestimonialsSection />
+
+            {/* Partners Marquee */}
+            <Marquee />
+
+            {/* Pricing Section */}
+            <PricingSection />
+
+            {/* CTA Section */}
+            <CTASection />
+
+            {/* Footer */}
+            <Footer />
+
+            {/* WhatsApp Float Button */}
+            <motion.a
+              href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20AgroIA."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-3 rounded-full shadow-xl"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1 }}
+            >
+              <MessageSquare className="w-6 h-6" />
+            </motion.a>
+
+            {/* Cookie Consent Banner */}
+            <AnimatePresence>
+              {!cookieConsent && (
+                <motion.div
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 100, opacity: 0 }}
+                  className="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-40 border-t border-gray-200"
+                >
+                  <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between">
+                    <div className="mb-4 sm:mb-0">
+                      <p className="text-gray-700">
+                        Este site utiliza cookies para melhorar sua experiência.
+                        Ao continuar navegando, você concorda com nossa{' '}
+                        <a
+                          href="/privacidade"
+                          className="text-green-600 underline"
+                        >
+                          Política de Privacidade
+                        </a>
+                        .
+                      </p>
+                    </div>
+                    <div className="flex space-x-3">
+                      <button
+                        onClick={() => setCookieConsent(true)}
+                        className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                      >
+                        Recusar
+                      </button>
+                      <button
+                        onClick={acceptCookies}
+                        className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                      >
+                        Aceitar
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </main>
   );
 }
