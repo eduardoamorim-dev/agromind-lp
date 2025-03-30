@@ -15,7 +15,7 @@ export default function FAQ() {
     {
       question: 'Como a Agro Mind identifica pragas com base em uma foto?',
       answer:
-        'Nossa tecnologia usa visão computacional e modelos de inteligência artificial treinados com milhares de exemplos reais. Ao receber uma imagem, nossa IA compara padrões visuais com seu banco de dados de pragas e doenças, identificando a espécie e fornecendo recomendações baseadas nas pesquisas da Embrapa.',
+        'Nossa tecnologia usa visão computacional e modelos de inteligência artificial treinados com uma variedade de exemplos reais. Ao receber uma imagem, nossa IA compara padrões visuais com seu banco de dados de pragas e doenças, identificando a espécie e fornecendo recomendações baseadas nas pesquisas ciêntificas.',
     },
     {
       question: 'Quais culturas são suportadas pela plataforma?',
@@ -28,14 +28,14 @@ export default function FAQ() {
         'Para o diagnóstico completo com fotos, sim, é necessária uma conexão com a internet. No entanto, nosso aplicativo móvel possui um modo offline que permite acessar informações previamente baixadas sobre as pragas mais comuns e suas soluções, perfeito para áreas com cobertura limitada.',
     },
     {
-      question: 'Os dados da Embrapa são atualizados regularmente?',
+      question: 'Os dados são atualizados regularmente?',
       answer:
         'Sim, nossa base de conhecimento é atualizada constantemente com as pesquisas mais recentes da Embrapa e outras instituições de pesquisa agrícola. Isso garante que as recomendações fornecidas estejam sempre alinhadas com as melhores práticas e descobertas científicas.',
     },
     {
       question: 'Como funciona o período de teste gratuito?',
       answer:
-        'O teste gratuito de 30 dias dá acesso completo a todas as funcionalidades da plataforma, incluindo diagnóstico ilimitado de pragas, recomendações personalizadas e suporte ao cliente. Não exigimos cartão de crédito para iniciar o teste, e você receberá um lembrete antes do término do período para decidir se deseja continuar com uma assinatura.',
+        'O teste gratuito de 3 dias dá acesso completo a todas as funcionalidades da plataforma, incluindo diagnóstico ilimitado de pragas, recomendações personalizadas e suporte ao cliente. Não exigimos cartão de crédito para iniciar o teste, e você receberá um lembrete antes do término do período para decidir se deseja continuar com uma assinatura.',
     },
   ];
 

@@ -31,7 +31,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'grid-pattern': "url('/images/grid-pattern.svg')",
+        'grid-pattern': "url('/images/grid-pattern.png')",
       },
       boxShadow: {
         'glow-green': '0 0 15px 5px rgba(34, 197, 94, 0.3)',

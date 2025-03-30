@@ -79,7 +79,7 @@ export default function HeroSection() {
             >
               <Sparkles className="w-4 h-4 mr-2 text-yellow-400" />
               <span className="text-sm font-medium">
-                Potencializado pela Embrapa
+                Decisões mais inteligentes
               </span>
             </motion.div>
 
@@ -111,6 +111,12 @@ export default function HeroSection() {
                 className="bg-gradient-to-r from-green-500 to-emerald-400 hover:from-green-600 hover:to-emerald-500 text-white font-medium py-3 px-8 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
+                onClick={() => {
+                  const demoSection = document.getElementById('demo');
+                  if (demoSection) {
+                    demoSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 Veja a Demo <ArrowRight className="ml-2 w-5 h-5" />
               </motion.button>
@@ -208,11 +214,11 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-gray-800">
-                      Alerta de Praga Detectado
+                      Recomendação Gerada
                     </h4>
                     <p className="text-xs text-gray-600">
-                      Identificamos lagartas Helicoverpa em sua plantação de
-                      soja.
+                      Protocolo #2158: Manejo integrado para controle de
+                      Ferrugem Asiática em soja (estágio R2)
                     </p>
                   </div>
                 </div>

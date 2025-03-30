@@ -54,22 +54,11 @@ export default function Footer() {
       ],
     },
     {
-      title: 'Recursos',
-      links: [
-        { name: 'Base de conhecimento', href: '#base' },
-        { name: 'Biblioteca de pragas', href: '#biblioteca' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'Webinars', href: '/webinars' },
-        { name: 'Guias e eBooks', href: '/recursos' },
-      ],
-    },
-    {
       title: 'Empresa',
       links: [
-        { name: 'Sobre nós', href: '/sobre' },
+        { name: 'Sobre nós', href: '#sobre' },
         { name: 'Parceiros', href: '/parceiros' },
         { name: 'Carreiras', href: '/carreiras' },
-        { name: 'Imprensa', href: '/imprensa' },
         { name: 'Contato', href: '/contato' },
       ],
     },
@@ -104,23 +93,25 @@ export default function Footer() {
             </Link>
 
             <p className="text-gray-400 mb-6">
-              Utilizamos inteligência artificial para revolucionar o controle de
-              pragas no campo, combinando a tecnologia mais avançada com o
-              conhecimento científico da Embrapa.
+              Utilizamos inteligência artificial para potencializar a
+              consultoria agrícola, combinando tecnologia avançada com
+              conhecimento científico atualizado. Nossa IA apoia o consultor em
+              múltiplas dimensões, tudo para maximizar resultados com decisões
+              mais fundamentadas.
             </p>
 
             <div className="space-y-3 text-gray-400">
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-green-400 shrink-0 mt-0.5" />
                 <span>
-                  BR-365, km 615
+                  Av. Líria Terezinha Lassi Capuano, 255
                   <br />
-                  Uberlândia, MG, 38407-180
+                  Patrocinio, MG, 38747-792
                 </span>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-green-400 shrink-0" />
-                <span>(34) 3222-5700</span>
+                <span>(34) 99820-7722</span>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-green-400 shrink-0" />

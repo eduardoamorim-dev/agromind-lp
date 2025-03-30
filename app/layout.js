@@ -7,9 +7,9 @@ export const metadata = {
   title:
     'AgroMind | Inteligência Artificial para o Controle de Pragas Agrícolas',
   description:
-    'Plataforma de inteligência artificial desenvolvida com dados da Embrapa para identificação e controle preciso de pragas em lavouras brasileiras.',
+    'Plataforma de inteligência artificial desenvolvida com dados da ciêntificos para identificação e controle preciso de pragas em lavouras brasileiras.',
   keywords:
-    'agricultura, agro, tecnologia agrícola, controle de pragas, inteligência artificial, embrapa, agtech, agritech, lavoura, fazenda, produção rural',
+    'agricultura, agro, tecnologia agrícola, controle de pragas, inteligência artificial, ciêntificos, agtech, agritech, lavoura, fazenda, produção rural',
   openGraph: {
     title: 'AgroMind | IA Revolucionária no Controle de Pragas',
     description:

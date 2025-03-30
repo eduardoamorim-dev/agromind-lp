@@ -95,7 +95,7 @@ yarn dev
 - `/public/images/soybean-rust.jpg` - Imagem de ferrugem da soja
 - `/public/images/feature-*.png` - Imagens para as features
 - `/public/images/partners/*.svg` - Logos de parceiros
-- `/public/images/grid-pattern.svg` - Padrão de grade para fundos
+- `/public/images/grid-pattern.png` - Padrão de grade para fundos
 - `/public/images/og-image.jpg` - Imagem para compartilhamento em redes sociais
 
 ## 📱 Responsividade
@@ -128,6 +128,7 @@ Para obter o máximo da landing page:
 Para fazer deploy da landing page:
 
 1. **Vercel** (recomendado para Next.js):
+
    ```bash
    npm install -g vercel
    vercel

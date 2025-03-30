@@ -50,7 +50,7 @@ export default function CTASection() {
           fill
           className="object-cover mix-blend-overlay"
         />
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-10"></div>
       </div>
 
       {/* Content */}
@@ -66,20 +66,19 @@ export default function CTASection() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Pronto para transformar o controle de pragas na sua lavoura?
+                  Pronto para revolucionar sua consultoria agrícola?
                 </h2>
 
                 <p className="text-green-50 text-xl mb-8">
-                  Junte-se a milhares de produtores que estão utilizando
-                  inteligência artificial para proteger suas culturas e aumentar
-                  a produtividade.
+                  Junte-se a milhares de consultores que estão utilizando
+                  inteligência artificial para oferecer recomendações mais
+                  precisas e aumentar o valor de seu serviço.
                 </p>
 
                 <div className="space-y-4 mb-10">
                   {[
                     'Acesso à tecnologia de ponta com interface amigável',
-                    'Diagnósticos respaldados pela pesquisa da Embrapa',
-                    'Suporte técnico especializado durante toda sua jornada',
+                    'Diagnósticos respaldados por pesquisas ciêntificas',
                     'Atualizações contínuas com novos recursos',
                   ].map((item, index) => (
                     <motion.div
@@ -105,12 +104,14 @@ export default function CTASection() {
                     </div>
                     <div>
                       <h3 className="text-white font-medium mb-1">
-                        Não perca sua produção para pragas
+                        Eleve o nível das suas recomendações técnicas
                       </h3>
                       <p className="text-green-50 text-sm">
-                        Produtores que utilizam nossa plataforma reportam
-                        redução média de 32% nas perdas causadas por pragas e
-                        doenças. Comece hoje mesmo e proteja seu investimento.
+                        Consultores que utilizam nossa plataforma reportam
+                        aumento de 45% na precisão de diagnósticos e redução
+                        média de 32% nas perdas de seus clientes. Destaque-se no
+                        mercado oferecendo recomendações baseadas em dados
+                        científicos atualizados.
                       </p>
                     </div>
                   </div>
@@ -133,7 +134,7 @@ export default function CTASection() {
                       Comece seu período de teste gratuito
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      30 dias grátis. Sem necessidade de cartão de crédito.
+                      3 dias grátis. Sem necessidade de cartão de crédito.
                     </p>
 
                     <form onSubmit={handleSubmit}>

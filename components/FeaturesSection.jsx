@@ -37,33 +37,15 @@ export default function FeaturesSection() {
     },
     {
       icon: <Database size={24} />,
-      title: 'Base Científica da Embrapa',
+      title: 'Base Científica',
       description:
-        'Acesse conhecimento científico da maior instituição de pesquisa agrícola do Brasil.',
-    },
-    {
-      icon: <BarChart size={24} />,
-      title: 'Analytics Detalhados',
-      description:
-        'Monitore estatísticas de pragas e preveja surtos com base em dados históricos e ambientais.',
+        'Acesse conhecimento científico das maiores instituições de pesquisa agrícola do Brasil.',
     },
     {
       icon: <Zap size={24} />,
       title: 'Resposta Rápida',
       description:
         'Receba diagnósticos e recomendações de tratamento em segundos, não em dias.',
-    },
-    {
-      icon: <Globe size={24} />,
-      title: 'Mapeamento Regional',
-      description:
-        'Visualize padrões regionais de pragas e prepare-se para possíveis ameaças à sua lavoura.',
-    },
-    {
-      icon: <Shield size={24} />,
-      title: 'Gestão Preventiva',
-      description:
-        'Receba alertas antecipados sobre condições favoráveis a pragas específicas em sua região.',
     },
   ];
 
@@ -84,7 +66,7 @@ export default function FeaturesSection() {
           animate={isInView ? { opacity: 0.7 } : { opacity: 0 }}
           transition={{ duration: 1 }}
         />
-        <div className="absolute w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-5" />
+        <div className="absolute w-full h-full bg-[url('/images/grid-pattern.png')] opacity-5" />
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -101,12 +83,14 @@ export default function FeaturesSection() {
           </div>
           <h2 className="text-4xl font-bold text-gray-800 mb-6">
             Tecnologia de ponta para{' '}
-            <span className="text-green-600">proteger suas lavouras</span>
+            <span className="text-green-600">
+              potencializar suas consultorias
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Nossa plataforma combina IA avançada e conhecimento agrícola da
-            Embrapa para oferecer a melhor solução de controle de pragas do
-            mercado.
+            Nossa plataforma combina IA avançada e conhecimento agrícola com
+            base científica para oferecer diagnósticos precisos e recomendações
+            técnicas que elevam o valor de seus serviços.
           </p>
         </motion.div>
 
@@ -138,19 +122,19 @@ export default function FeaturesSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-3xl font-bold mb-6">
-                Recomendações personalizadas para sua lavoura
+                Respostas precisas para suas consultas técnicas
               </h3>
               <p className="text-green-50 mb-8">
-                Nossa tecnologia RAG (Retrieval-Augmented Generation) combina
-                dados da Embrapa com informações específicas da sua lavoura para
-                fornecer recomendações totalmente personalizadas.
+                Nossa tecnologia RAG (Retrieval-Augmented Generation) organiza e
+                sintetiza conhecimento agrícola avançado para responder
+                exatamente o que você precisa saber.
               </p>
 
               <ul className="space-y-3">
                 {[
-                  'Recomendações adaptadas ao clima da sua região',
-                  'Soluções compatíveis com seu sistema de manejo',
-                  'Orientações alinhadas com a fase atual da cultura',
+                  'Informações contextualizadas para diferentes condições climáticas',
+                  'Dados técnicos adaptados a diversos sistemas de manejo',
+                  'Respostas específicas para cada estágio fenológico das culturas',
                 ].map((item, index) => (
                   <motion.li
                     key={index}
