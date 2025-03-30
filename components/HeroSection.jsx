@@ -89,7 +89,7 @@ export default function HeroSection() {
             >
               AgroMind{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-300">
-                Potencializando Consultores Agrícolas
+                Centralizador de Informações para Consultores Agrícolas
               </span>{' '}
             </motion.h1>
 
