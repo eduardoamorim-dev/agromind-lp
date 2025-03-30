@@ -9,6 +9,7 @@ import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import AISimulator from '@/components/AISimulator';
+import PricingSection from '@/components/PricingSection';
 import Marquee from '@/components/Marquee';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
@@ -37,7 +38,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative" id="inicio">
+    <main className="relative mb-8 mt-8" id="inicio">
       <AnimatePresence>
         {loading ? (
           <motion.div
@@ -275,6 +276,15 @@ export default function Home() {
             {/* Testimonials Section com ID para navegação */}
             <section id="depoimentos">
               <TestimonialsSection />
+            </section>
+
+            <section
+              id="pricing"
+              className="py-24 bg-white border-t border-b border-gray-100"
+            >
+              <div className="container mx-auto px-4">
+                <PricingSection />
+              </div>
             </section>
 
             {/* Partners Marquee com ID para navegação */}
