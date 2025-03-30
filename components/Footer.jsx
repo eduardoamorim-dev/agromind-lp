@@ -92,6 +92,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-5">
               <Image
+                loading="lazy"
                 src="/images/logo.png"
                 alt="AgroMind Logo"
                 width={40}
@@ -112,18 +113,18 @@ export default function Footer() {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-green-400 shrink-0 mt-0.5" />
                 <span>
-                  Av. Tecnologia Verde, 1500
+                  BR-365, km 615
                   <br />
-                  Agropólis, São Paulo - SP
+                  Uberlândia, MG, 38407-180
                 </span>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-green-400 shrink-0" />
-                <span>(11) 3456-7890</span>
+                <span>(34) 3222-5700</span>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-green-400 shrink-0" />
-                <span>contato@AgroMind.com.br</span>
+                <span>contato@agromind.com.br</span>
               </div>
             </div>
 
@@ -248,15 +249,6 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center space-x-4">
-            <div className="flex items-center">
-              <Globe className="w-4 h-4 text-gray-500 mr-2" />
-              <select className="bg-transparent text-gray-400 text-sm border-none focus:outline-none">
-                <option value="pt-br">Português (Brasil)</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-              </select>
-            </div>
-
             <button
               onClick={scrollToTop}
               className="bg-gray-800 hover:bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"

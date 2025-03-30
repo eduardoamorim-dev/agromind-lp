@@ -1,17 +1,10 @@
-// components/AISimulator.jsx
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Camera,
-  Mic,
-  Send,
-  X,
-  Image as ImageIcon,
-  UploadCloud,
-  Loader2,
-} from 'lucide-react';
+import { Camera, Mic, Send, Image as ImageIcon } from 'lucide-react';
+
+import Image from 'next/image';
 
 export default function AISimulator() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -287,7 +280,7 @@ export default function AISimulator() {
               type="button"
               className="w-9 h-9 flex items-center justify-center rounded-full text-gray-500 hover:bg-gray-100"
             >
-              <ImageIcon size={20} />
+              <Image loading="lazy" Icon size={20} />
             </button>
             <button
               type="button"

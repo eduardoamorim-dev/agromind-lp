@@ -44,6 +44,7 @@ export default function CTASection() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-green-900 to-green-600 opacity-90"></div>
         <Image
+          loading="lazy"
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"
           alt="Campo agrícola"
           fill

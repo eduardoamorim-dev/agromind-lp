@@ -1,10 +1,9 @@
-// app/page.js
 'use client';
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Phone } from 'lucide-react';
 
-// Components
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
@@ -13,7 +12,7 @@ import AISimulator from '@/components/AISimulator';
 import Marquee from '@/components/Marquee';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
-import { MessageSquare } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -38,30 +37,117 @@ export default function Home() {
   };
 
   return (
-    <main className="relative">
+    <main className="relative" id="inicio">
       <AnimatePresence>
         {loading ? (
           <motion.div
             key="loader"
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-green-900"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-green-900/95 backdrop-blur-sm"
           >
-            <div className="text-center">
-              <div className="inline-block relative w-20 h-20">
-                <div className="absolute top-0 left-0 w-full h-full border-4 border-white/20 rounded-full"></div>
+            <div className="text-center relative">
+              {/* Logo principal */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="relative w-24 h-24 mx-auto"
+              >
+                <Image
+                  loading="lazy"
+                  src="/images/logo.png"
+                  alt="AgroMind Logo"
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
+
+              {/* Nome da empresa com aparecimento gradual das letras */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                <motion.h1 className="text-white text-2xl font-bold tracking-wide">
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.3 }}
+                  >
+                    A
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.3 }}
+                  >
+                    g
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6, duration: 0.3 }}
+                  >
+                    r
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.3 }}
+                  >
+                    o
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 0.3 }}
+                    className="text-green-300 font-extrabold"
+                  >
+                    M
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.9, duration: 0.3 }}
+                    className="text-green-300 font-extrabold"
+                  >
+                    i
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.0, duration: 0.3 }}
+                    className="text-green-300 font-extrabold"
+                  >
+                    n
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.1, duration: 0.3 }}
+                    className="text-green-300 font-extrabold"
+                  >
+                    d
+                  </motion.span>
+                </motion.h1>
+              </motion.div>
+
+              {/* Linha de progresso na parte inferior */}
+              <div className="mt-6 w-48 h-1 mx-auto bg-white/20 rounded-full overflow-hidden">
                 <motion.div
-                  className="absolute top-0 left-0 w-full h-full border-t-4 border-white rounded-full"
-                  animate={{ rotate: 360 }}
+                  className="h-full bg-green-400"
+                  initial={{ width: '0%' }}
+                  animate={{ width: '100%' }}
                   transition={{
-                    duration: 1,
+                    duration: 2.5,
                     repeat: Infinity,
-                    ease: 'linear',
+                    ease: 'easeInOut',
                   }}
                 ></motion.div>
               </div>
-              <p className="mt-4 text-white text-xl font-medium">AgroMind</p>
             </div>
           </motion.div>
         ) : (
@@ -72,15 +158,15 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <Navbar />
-
-            {/* Hero Section */}
             <HeroSection />
 
-            {/* Features Section */}
-            <FeaturesSection />
+            {/* Features Section com ID para navegação */}
+            <section id="tecnologia">
+              <FeaturesSection />
+            </section>
 
-            {/* AI Demo Section */}
-            <section className="py-20 bg-gray-50">
+            {/* AI Demo Section com ID para navegação */}
+            <section id="demo" className="py-20 bg-gray-50">
               <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <motion.div
@@ -183,16 +269,21 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Testimonials Section */}
-            <TestimonialsSection />
+            {/* Testimonials Section com ID para navegação */}
+            <section id="depoimentos">
+              <TestimonialsSection />
+            </section>
 
-            {/* Partners Marquee */}
-            <Marquee />
+            {/* Partners Marquee com ID para navegação */}
+            <section id="parceiros">
+              <Marquee />
+            </section>
 
-            {/* CTA Section */}
-            <CTASection />
+            {/* CTA Section com ID para navegação */}
+            <section id="contato">
+              <CTASection />
+            </section>
 
-            {/* Footer */}
             <Footer />
 
             {/* WhatsApp Float Button */}
@@ -207,7 +298,7 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1 }}
             >
-              <MessageSquare className="w-6 h-6" />
+              <Phone className="w-6 h-6" />
             </motion.a>
 
             {/* Cookie Consent Banner */}

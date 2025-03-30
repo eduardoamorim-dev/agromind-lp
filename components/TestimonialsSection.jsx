@@ -163,6 +163,7 @@ export default function TestimonialsSection() {
                 >
                   <div className="relative h-full overflow-hidden">
                     <Image
+                      loading="lazy"
                       src={testimonials[activeIndex].image}
                       alt={testimonials[activeIndex].name}
                       fill
@@ -223,6 +224,7 @@ export default function TestimonialsSection() {
                   <div className="flex items-center">
                     <div className="mr-4 w-12 h-12 relative rounded-full overflow-hidden">
                       <Image
+                        loading="lazy"
                         src={testimonials[activeIndex].image}
                         alt={testimonials[activeIndex].name}
                         fill

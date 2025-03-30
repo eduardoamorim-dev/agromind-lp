@@ -55,26 +55,19 @@ export default function ModernCard({
             {title}
           </h3>
           <p className="text-gray-600 mb-5">{description}</p>
-
-          {/* Link */}
-          <div className="flex items-center text-green-600 font-medium">
-            <span>Saiba mais</span>
-            <motion.div
-              className="ml-1"
-              initial={{ x: 0 }}
-              animate={{ x: isHovered ? 5 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <ArrowUpRight size={18} />
-            </motion.div>
-          </div>
         </div>
       </div>
 
       {/* Image */}
       {image && (
         <div className="absolute -right-10 -bottom-10 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity">
-          <Image src={image} alt={title} fill className="object-contain" />
+          <Image
+            loading="lazy"
+            src={image}
+            alt={title}
+            fill
+            className="object-contain"
+          />
         </div>
       )}
     </motion.div>

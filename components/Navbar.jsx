@@ -1,212 +1,174 @@
-// components/Navbar.jsx
 'use client';
 
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+
+const navLinks = [
+  {name: 'Inicio', href: '#inicio'},
+  { name: 'Tecnologia', href: '#tecnologia' },
+  { name: 'Demo', href: '#demo' },
+  { name: 'Depoimentos', href: '#depoimentos' },
+  { name: 'Parceiros', href: '#parceiros' },
+  { name: 'Contato', href: '#contato' },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
 
+  // Detecta scroll para mudar a aparência da navbar
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
-  const navLinks = [
-    {
-      name: 'Soluções',
-      href: '#solucoes',
-      dropdown: [
-        { name: 'Identificação de Pragas', href: '#identificacao' },
-        { name: 'Monitoramento de Lavouras', href: '#monitoramento' },
-        { name: 'Recomendações Personalizadas', href: '#recomendacoes' },
-      ],
-    },
-    { name: 'Tecnologia', href: '#tecnologia' },
-    {
-      name: 'Recursos',
-      href: '#recursos',
-      dropdown: [
-        { name: 'Biblioteca de Pragas', href: '#biblioteca' },
-        { name: 'Base de Conhecimento', href: '#base-conhecimento' },
-        { name: 'Estudos de Caso', href: '#casos' },
-      ],
-    },
-    { name: 'Preços', href: '#precos' },
-    { name: 'Blog', href: '/blog' },
-  ];
+  // Função para scroll suave ao clicar em links
+  const handleScrollToSection = (e, href) => {
+    e.preventDefault();
+
+    // Se for um link interno com hashtag
+    if (href.startsWith('#')) {
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        // Scroll suave para o elemento
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+
+        // Fecha o menu mobile após clicar
+        setIsOpen(false);
+      }
+    } else {
+      // Para links externos ou outras páginas
+      window.location.href = href;
+    }
+  };
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-lg py-2'
-          : 'bg-transparent py-4'
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-10 w-10">
+            <div className="relative h-10 w-10 mr-2">
               <Image
                 src="/images/logo.png"
-                alt="Agro Mind Logo"
+                alt="AgroMind Logo"
                 fill
                 className="object-contain"
               />
             </div>
-            <motion.span
-              className={`ml-2 text-xl font-bold ${scrolled ? 'text-green-700' : 'text-white'}`}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+            <span
+              className={`font-bold text-xl ${scrolled ? 'text-green-600' : 'text-white'}`}
             >
-              Agro<span className="text-green-500">Mind</span>
-            </motion.span>
+              AgroMind
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link, index) => (
-              <div
-                key={index}
-                className="relative group"
-                onMouseEnter={() => setActiveDropdown(index)}
-                onMouseLeave={() => setActiveDropdown(null)}
+          <div className="hidden md:flex space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleScrollToSection(e, link.href)}
+                className={`transition-colors ${
+                  scrolled
+                    ? 'text-gray-700 hover:text-green-600'
+                    : 'text-white hover:text-green-300'
+                }`}
               >
-                <Link
-                  href={link.href}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center ${
-                    scrolled
-                      ? 'text-gray-700 hover:text-green-600 hover:bg-gray-100'
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {link.name}
-                  {link.dropdown && <ChevronDown className="ml-1 h-4 w-4" />}
-                </Link>
-
-                {link.dropdown && (
-                  <AnimatePresence>
-                    {activeDropdown === index && (
-                      <motion.div
-                        className="absolute left-0 mt-1 w-56 rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <div className="py-2 px-2">
-                          {link.dropdown.map((item, idx) => (
-                            <Link
-                              key={idx}
-                              href={item.href}
-                              className="block px-3 py-2 rounded-lg text-sm text-gray-700 hover:bg-green-50 hover:text-green-700"
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                )}
-              </div>
+                {link.name}
+              </a>
             ))}
+            <a
+              href="#contato"
+              onClick={(e) => handleScrollToSection(e, '#contato')}
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg transition-colors"
+            >
+              Fale Conosco
+            </a>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
+            className="md:hidden rounded-md p-2 inline-flex items-center justify-center"
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden z-50 p-2 rounded-full ${
-              isOpen
-                ? 'bg-white text-gray-800'
-                : scrolled
-                  ? 'text-gray-800 hover:bg-gray-100'
-                  : 'text-white hover:bg-white/10'
-            }`}
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <svg
+              className={`h-6 w-6 ${scrolled ? 'text-gray-700' : 'text-white'}`}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+              />
+            </svg>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden fixed inset-0 top-0 z-40 bg-green-600 bg-gradient-to-br from-green-600 to-green-800"
+        {/* Mobile Menu */}
+        <motion.div
+          className={`${isOpen ? 'block' : 'hidden'} md:hidden mt-4`}
+          animate={
+            isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }
+          }
+          initial={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="flex flex-col space-y-3 pb-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleScrollToSection(e, link.href)}
+                className={`px-3 py-2 rounded-md ${
+                  scrolled
+                    ? 'text-gray-700 hover:bg-gray-100'
+                    : 'text-white hover:bg-green-600/20'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="#contato"
+              onClick={(e) => handleScrollToSection(e, '#contato')}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-center"
             >
-              <div className="flex flex-col items-center justify-center h-full overflow-y-auto">
-                <div className="flex flex-col space-y-6 w-full max-w-sm px-6">
-                  {navLinks.map((link, index) => (
-                    <div key={index} className="w-full">
-                      <button
-                        onClick={() => {
-                          if (link.dropdown) {
-                            setActiveDropdown(
-                              activeDropdown === index ? null : index
-                            );
-                          } else {
-                            setIsOpen(false);
-                          }
-                        }}
-                        className="w-full text-left py-2 text-xl font-medium text-white flex items-center justify-between"
-                      >
-                        {link.name}
-                        {link.dropdown && (
-                          <ChevronDown
-                            className={`h-5 w-5 transition-transform duration-200 ${
-                              activeDropdown === index ? 'rotate-180' : ''
-                            }`}
-                          />
-                        )}
-                      </button>
-
-                      {link.dropdown && activeDropdown === index && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="ml-4 mt-2 space-y-2"
-                        >
-                          {link.dropdown.map((item, idx) => (
-                            <Link
-                              key={idx}
-                              href={item.href}
-                              onClick={() => setIsOpen(false)}
-                              className="block py-2 text-white/80 hover:text-white transition-colors"
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              Fale Conosco
+            </a>
+          </div>
+        </motion.div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

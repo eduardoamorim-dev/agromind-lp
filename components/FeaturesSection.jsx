@@ -1,4 +1,3 @@
-// components/FeaturesSection.jsx
 'use client';
 
 import { useRef } from 'react';
@@ -6,12 +5,12 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Image from 'next/image';
 import {
   Check,
-  Camera,
   Database,
   Zap,
   BarChart,
   Globe,
   Shield,
+  SquareActivity,
 } from 'lucide-react';
 import ModernCard from './ModernCard';
 
@@ -31,7 +30,7 @@ export default function FeaturesSection() {
 
   const features = [
     {
-      icon: <Camera size={24} />,
+      icon: <SquareActivity size={24} />,
       title: 'Identificação Precisa',
       description:
         'Identifique pragas e doenças com precisão de até 97% usando apenas uma foto da planta afetada.',
@@ -149,7 +148,6 @@ export default function FeaturesSection() {
 
               <ul className="space-y-3">
                 {[
-                  'Tratamentos específicos para seu tipo de solo',
                   'Recomendações adaptadas ao clima da sua região',
                   'Soluções compatíveis com seu sistema de manejo',
                   'Orientações alinhadas com a fase atual da cultura',
@@ -181,6 +179,7 @@ export default function FeaturesSection() {
               >
                 <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
+                    loading="lazy"
                     src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"
                     alt="Recomendações personalizadas"
                     fill

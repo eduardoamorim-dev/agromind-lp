@@ -1,30 +1,31 @@
-// components/Marquee.jsx
 'use client';
 
-import { useRef, useEffect } from 'react';
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  useInView,
-} from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Marquee({ reversed = false, speed = 15 }) {
   const marqueeRef = useRef(null);
   const isInView = useInView(marqueeRef, { once: false });
 
-  // Logos de empresas parceiras - adicione seus próprios logos aqui
   const partners = [
-    { name: 'Biofy', logo: '/images/partners/embrapa.svg' },
-    { name: 'NVIDIA', logo: '/images/partners/coop1.svg' },
-    { name: 'Oracle', logo: '/images/partners/agrosul.svg' },
-    { name: 'Embrapa', logo: '/images/partners/agrosul.svg' },
+    { name: 'Biofy', logo: '/images/biofy.svg' },
+    { name: 'NVIDIA', logo: '/images/nvidia.png' },
+    { name: 'Oracle', logo: '/images/oracle.png' },
   ];
 
-  // Duplicamos os logos para criar efeito contínuo
-  const allPartners = [...partners, ...partners];
+  // Duplicamos os parceiros várias vezes para garantir que preencham a tela
+  const allPartners = [
+    ...partners,
+    ...partners,
+    ...partners,
+    ...partners,
+    ...partners,
+    ...partners,
+    ...partners,
+    ...partners,
+    ...partners,
+  ];
 
   return (
     <section className="py-16 bg-gray-50 overflow-hidden">
@@ -50,34 +51,42 @@ export default function Marquee({ reversed = false, speed = 15 }) {
       </div>
 
       <div ref={marqueeRef} className="relative w-full py-4 overflow-hidden">
-        <motion.div
-          className="flex items-center gap-12"
-          initial={{ x: reversed ? '-100%' : '0%' }}
-          animate={{ x: reversed ? '0%' : '-100%' }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration: allPartners.length * (30 / speed),
-            ease: 'linear',
-            pause: !isInView,
-          }}
-        >
-          {allPartners.map((partner, index) => (
-            <div
-              key={`${partner.name}-${index}`}
-              className="flex-shrink-0 h-16 relative flex items-center justify-center group"
-            >
-              <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 w-32 h-16 relative">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  fill
-                  className="object-contain"
-                />
+        <div className="flex whitespace-nowrap">
+          <motion.div
+            className="flex items-center gap-12 ml-full"
+            animate={{ x: [0, -2000] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 30,
+                ease: 'linear',
+              },
+              pause: !isInView,
+            }}
+          >
+            {allPartners.map((partner, index) => (
+              <div
+                key={`${partner.name}-${index}`}
+                className="flex-shrink-0 h-16 relative flex items-center justify-center group"
+              >
+                <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 w-32 h-16 relative">
+                  <Image
+                    loading="lazy"
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain"
+                    onError={(e) => {
+                      console.error(`Error loading image: ${partner.logo}`);
+                      e.target.src = '/images/placeholder-logo.png';
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
