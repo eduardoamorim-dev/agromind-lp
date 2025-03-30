@@ -185,10 +185,10 @@ export default function Home() {
                       </span>
                     </h2>
                     <p className="text-xl text-gray-600 mb-6">
-                      Experimente interagir com nossa inteligência artificial
-                      treinada com dados da Embrapa. Faça perguntas sobre pragas
-                      comuns e receba diagnósticos precisos e recomendações
-                      práticas.
+                      Experimente nossa inteligência artificial especializada
+                      que amplia sua capacidade de diagnóstico e consultoria
+                      agrícola. Integre dados de múltiplas fontes para análises
+                      completas que apoiam suas recomendações técnicas.
                     </p>
                     <ul className="space-y-3 mb-8">
                       <li className="flex items-start">
@@ -209,7 +209,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <span className="text-gray-700">
-                          Upload de fotos para identificação visual
+                          Responde consultas técnicas em tempo real com
+                          informações cientificamente validadas
                         </span>
                       </li>
                       <li className="flex items-start">
@@ -230,7 +231,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <span className="text-gray-700">
-                          Identificação de pragas por descrição de sintomas
+                          Previsões de condições ideais para intervenções
+                          agronômicas
                         </span>
                       </li>
                       <li className="flex items-start">
@@ -251,7 +253,30 @@ export default function Home() {
                           </svg>
                         </div>
                         <span className="text-gray-700">
-                          Recomendações científicas baseadas na Embrapa
+                          Documentação automática de recomendações para
+                          relatórios profissionais
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="bg-green-100 rounded-full p-1 mt-1 mr-3">
+                          <svg
+                            className="w-4 h-4 text-green-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                        </div>
+                        <span className="text-gray-700">
+                          Respostas estratégicas com base no contexto específico
+                          de cada cliente
                         </span>
                       </li>
                     </ul>

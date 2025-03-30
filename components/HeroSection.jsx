@@ -87,20 +87,20 @@ export default function HeroSection() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             >
-              IA que{' '}
+              AgroMind{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-300">
-                revoluciona
+                Potencializando Consultores Agrícolas
               </span>{' '}
-              o controle de pragas
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
               className="text-xl text-white/80 mb-8 max-w-xl"
             >
-              Nossa plataforma usa inteligência artificial avançada combinada
-              com a base de conhecimento da Embrapa para identificar e combater
-              pragas agrícolas com precisão inédita.
+              Nossa plataforma potencializa consultores independentes com IA
+              avançada. Complementamos seu conhecimento técnico enquanto você
+              mantém controle total sobre as recomendações finais, ganhando
+              eficiência sem abrir mão da sua autoridade.
             </motion.p>
 
             <motion.div
@@ -112,15 +112,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Comece Gratuitamente <ArrowRight className="ml-2 w-5 h-5" />
-              </motion.button>
-
-              <motion.button
-                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 flex items-center justify-center"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                Veja a Demo
+                Veja a Demo <ArrowRight className="ml-2 w-5 h-5" />
               </motion.button>
             </motion.div>
 

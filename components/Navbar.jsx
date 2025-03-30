@@ -6,12 +6,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const navLinks = [
-  {name: 'Inicio', href: '#inicio'},
+  { name: 'Inicio', href: '#inicio' },
   { name: 'Tecnologia', href: '#tecnologia' },
   { name: 'Demo', href: '#demo' },
   { name: 'Depoimentos', href: '#depoimentos' },
   { name: 'Parceiros', href: '#parceiros' },
-  { name: 'Contato', href: '#contato' },
 ];
 
 export default function Navbar() {
@@ -22,16 +21,20 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      setScrolled(isScrolled);
     };
 
+    // Verificação inicial
+    handleScroll();
+
+    // Adiciona o listener de evento
     window.addEventListener('scroll', handleScroll);
+
+    // Cleanup quando o componente for desmontado
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrolled]);
+  }, []); // Removemos a dependência de scrolled para evitar loops
 
   // Função para scroll suave ao clicar em links
   const handleScrollToSection = (e, href) => {
@@ -87,28 +90,30 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex items-center">
+            <div className="flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleScrollToSection(e, link.href)}
+                  className={`transition-colors flex items-center ${
+                    scrolled
+                      ? 'text-gray-700 hover:text-green-600'
+                      : 'text-white hover:text-green-300'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
               <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleScrollToSection(e, link.href)}
-                className={`transition-colors ${
-                  scrolled
-                    ? 'text-gray-700 hover:text-green-600'
-                    : 'text-white hover:text-green-300'
-                }`}
+                href="#contato"
+                onClick={(e) => handleScrollToSection(e, '#contato')}
+                className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg transition-colors"
               >
-                {link.name}
+                Fale Conosco
               </a>
-            ))}
-            <a
-              href="#contato"
-              onClick={(e) => handleScrollToSection(e, '#contato')}
-              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg transition-colors"
-            >
-              Fale Conosco
-            </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -137,23 +142,25 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <motion.div
-          className={`${isOpen ? 'block' : 'hidden'} md:hidden mt-4`}
+          className={`${isOpen ? 'block' : 'hidden'} md:hidden mt-4 ${
+            scrolled ? 'bg-white' : 'bg-green-600/90'
+          } rounded-lg shadow-lg`}
           animate={
             isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }
           }
           initial={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="flex flex-col space-y-3 pb-4">
+          <div className="flex flex-col space-y-3 py-3 px-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollToSection(e, link.href)}
-                className={`px-3 py-2 rounded-md ${
+                className={`px-3 py-2 rounded-md text-center ${
                   scrolled
                     ? 'text-gray-700 hover:bg-gray-100'
-                    : 'text-white hover:bg-green-600/20'
+                    : 'text-white hover:bg-green-500'
                 }`}
               >
                 {link.name}
@@ -162,7 +169,11 @@ export default function Navbar() {
             <a
               href="#contato"
               onClick={(e) => handleScrollToSection(e, '#contato')}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-center"
+              className={`${
+                scrolled
+                  ? 'bg-green-600 hover:bg-green-700 text-white'
+                  : 'bg-white hover:bg-gray-100 text-green-700'
+              } px-4 py-2 rounded-lg text-center transition-colors`}
             >
               Fale Conosco
             </a>
