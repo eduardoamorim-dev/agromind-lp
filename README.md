@@ -19,34 +19,6 @@ Esta é uma landing page moderna e altamente interativa para uma startup de tecn
 - **Framer Motion** - Biblioteca de animações
 - **Lucide React** - Ícones modernos e customizáveis
 
-## 📁 Estrutura do Projeto
-
-```
-agroia-landing/
-├── app/                  # Arquivos do Next.js App Router
-│   ├── globals.css       # Estilos globais
-│   ├── layout.js         # Layout principal (com meta tags)
-│   └── page.js           # Página principal
-├── components/           # Componentes reutilizáveis
-│   ├── AISimulator.jsx   # Simulador de IA
-│   ├── CTASection.jsx    # Seção de call-to-action
-│   ├── FeaturesSection.jsx # Seção de recursos
-│   ├── Footer.jsx        # Rodapé
-│   ├── HeroSection.jsx   # Hero section
-│   ├── Marquee.jsx       # Marquee para logos de parceiros
-│   ├── ModernCard.jsx    # Card de recursos
-│   ├── Navbar.jsx        # Navegação
-│   ├── ParticleBackground.jsx # Fundo de partículas interativo
-│   ├── PricingSection.jsx # Seção de preços
-│   └── TestimonialsSection.jsx # Seção de depoimentos
-├── public/               # Arquivos estáticos
-│   └── images/           # Imagens
-├── next.config.js        # Configuração do Next.js
-├── package.json          # Dependências do projeto
-├── postcss.config.js     # Configuração do PostCSS
-└── tailwind.config.js    # Configuração do Tailwind CSS
-```
-
 ## 🛠️ Configuração do Ambiente de Desenvolvimento
 
 ### Pré-requisitos
