@@ -79,6 +79,10 @@ Para obter o máximo da landing page:
 2. Personalize as meta tags em `app/layout.js`
 3. Configure o arquivo `app/sitemap.js` com suas URLs
 
+## Solução apresentada no hackaton 
+
+https://github.com/Gabrielcamargos28/hackathon_2025
+
 
 ## 📄 Licença
 
