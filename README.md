@@ -31,8 +31,8 @@ Esta é uma landing page moderna e altamente interativa para uma startup de tecn
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/agromind.git
-cd agromind
+git clone https://github.com/seu-usuario/agromind-lp.git
+cd agromind-lp
 ```
 
 2. Instale as dependências:
