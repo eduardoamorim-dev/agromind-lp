@@ -31,8 +31,8 @@ Esta é uma landing page moderna e altamente interativa para uma startup de tecn
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/agroia-landing.git
-cd agroia-landing
+git clone https://github.com/seu-usuario/agromind.git
+cd agromind
 ```
 
 2. Instale as dependências:
@@ -53,22 +53,6 @@ yarn dev
 
 4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-## 🖼️ Imagens
-
-É necessário adicionar as seguintes imagens ao projeto:
-
-- `/public/images/logo.svg` - Logo da AgroIA
-- `/public/images/logo-white.svg` - Logo branco para fundo escuro
-- `/public/images/hero-bg.jpg` - Imagem de fundo da seção hero
-- `/public/images/field-background.jpg` - Imagem de campo agrícola
-- `/public/images/testimonial-1.jpg`, `/public/images/testimonial-2.jpg`, `/public/images/testimonial-3.jpg` - Fotos de depoimentos
-- `/public/images/app-screen-1.jpg`, `/public/images/app-screen-2.jpg`, `/public/images/app-screen-3.jpg` - Screenshots do aplicativo
-- `/public/images/ai-recommendation.jpg` - Imagem da recomendação de IA
-- `/public/images/soybean-rust.jpg` - Imagem de ferrugem da soja
-- `/public/images/feature-*.png` - Imagens para as features
-- `/public/images/partners/*.svg` - Logos de parceiros
-- `/public/images/grid-pattern.png` - Padrão de grade para fundos
-- `/public/images/og-image.jpg` - Imagem para compartilhamento em redes sociais
 
 ## 📱 Responsividade
 
@@ -95,25 +79,8 @@ Para obter o máximo da landing page:
 2. Personalize as meta tags em `app/layout.js`
 3. Configure o arquivo `app/sitemap.js` com suas URLs
 
-## 🚀 Deploy
-
-Para fazer deploy da landing page:
-
-1. **Vercel** (recomendado para Next.js):
-
-   ```bash
-   npm install -g vercel
-   vercel
-   ```
-
-2. **Netlify**:
-   - Construa o projeto: `npm run build`
-   - Deploy: `netlify deploy --prod`
 
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 📞 Suporte
-
-Para suporte ou dúvidas, entre em contato através de [contato@agroia.com.br](mailto:contato@agroia.com.br).
